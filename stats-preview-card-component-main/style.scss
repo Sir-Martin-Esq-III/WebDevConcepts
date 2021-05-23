@@ -1,0 +1,135 @@
+//Main Colors
+$bgColor: hsl(233, 47%, 7%);
+$accentColor:hsl(277, 64%, 61%);
+$cardBGColor: hsl(244, 38%, 16%);
+
+//Text Colors
+$paragraphText: hsla(0, 0%, 100%, 0.50);
+$statHeddings:  hsla(0, 0%, 100%, 0.6);
+
+//Font stuff
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+body{
+    background-color: $bgColor;
+    margin: 0;
+}
+.container{
+    min-height: 100vh;
+    min-width: 100vw;
+    border-radius: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+   
+    margin: 5%;
+    border-radius: 1%;
+    display: flex;
+    background-color: $cardBGColor;
+    flex-direction: row;
+    
+}
+    
+.content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    padding: 0 5% 0 5%;
+    width: 50%;
+    flex-wrap: wrap;
+    color: white;
+    h1{
+        font-family: 'Inter', sans-serif;
+
+        #accentText{
+            color:$accentColor;
+        }
+    }
+
+    p{
+        font-family: 'Lexend Deca', sans-serif;
+        color:$paragraphText;
+        margin-top:0;
+        margin-bottom: 10%;
+        font-size: 15px;
+        
+    }
+
+    .stats{
+        padding-right: 5%;
+        display: flex;
+        gap:20%;
+        flex-direction: row;
+        flex-wrap: wrap;
+  
+    
+
+         
+        #item{
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+
+            h3{
+                font-family: 'Inter', sans-serif;
+                padding: 0;
+                margin-bottom: 1%;
+            }
+            p{
+                font-size: 10px;
+            }
+        }
+
+    }
+
+
+}
+
+.picture{   
+    flex-shrink: 1;
+    background-size:100% 100% ;
+    background-image: url(/images/image-header-desktop.jpg);
+    height:auto;
+    width: 50%;
+    box-shadow: 0 3000px rgba(204, 0, 255, 0.4) inset;
+}
+
+
+@media screen and (max-width:400px) {
+    .container{
+        height: fit-content;
+   
+    }
+    .card{
+        margin: 5%;
+        flex-direction: column-reverse;
+        height: fit-content;
+        justify-content: center;
+    }
+    .picture{
+        background-image: url(/images/image-header-mobile.jpg);
+        height: 25vh;
+        width: 100%;
+    }
+
+    .content{
+        text-align: center;
+        width: auto;
+        .stats{
+            gap:0%;
+            height: 25vh;
+            margin-bottom: 25%;
+            flex-wrap: nowrap;
+            flex-direction: column;
+
+        
+        }
+    
+    }
+
+}
